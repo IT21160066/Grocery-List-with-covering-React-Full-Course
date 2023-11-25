@@ -1,35 +1,42 @@
 import React from 'react'
+import { useState } from 'react';
 
 const Content = () => {
 
-  const handleNameChange = () => {
-    const userNames = ['Bob', 'Kevin', 'Dave'];
-    const int = Math.floor(Math.random() * 3);
-    return userNames[int]; //25.29
-  }
+    const [name, setName] = useState('Dave');
+    const [count, setCount] = useState(0);
 
-  const handleClick  =  () => {
-    console.log('You clicked it');
-  }
+    const handleNameChange = () => {
+        const userNames = ['Bob', 'Kevin', 'Dave'];
+        const int = Math.floor(Math.random() * 3);
+        //return userNames[int]; 
+        setName(userNames[int]);
+    }
 
-  const handleClick2  =  (name) => {
-    console.log(`${name} was clicked`);
-  }
+    const handleClick  =  () => {
+        setCount(count + 1);
+        setCount(count + 1);
+        console.log(count);
+    }
 
-  const handleClick3  =  (e) => {
-    console.log(e.target.innerText);
-  }
+    const handleClick2  =  (name) => {
+        console.log(count);
+    }
+
+    const handleClick3  =  (e) => {
+        console.log(e.target.innerText);
+    }
 
   return (
     <main>
         <p onDoubleClick={handleClick}>
-            Hello {handleNameChange()}!
+            Hello {name}!
         </p>
-        <button onClick={handleClick}>Click It</button>
-        <button onClick={() => handleClick2('John')}>Click Again</button>
-        <button onClick={(e) => handleClick3(e)}>Click Again</button>
+        <button onClick={handleNameChange}>Change Name</button>
+        <button onClick={handleClick}>Click Again</button>
+        <button onClick={handleClick2}>Click Again</button>
     </main>
   )
 }
 
-export default Content
+export default Content //a.03.25
