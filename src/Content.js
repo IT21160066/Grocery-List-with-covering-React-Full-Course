@@ -61,7 +61,7 @@ const Content = ({ items, hanndleCheck, handleDelete }) => {
     // }
 
   return (
-    <main>
+    <>
         {/* <p onDoubleClick={handleClick}>
             Hello {name}!
         </p>
@@ -79,7 +79,7 @@ const Content = ({ items, hanndleCheck, handleDelete }) => {
                 marginTop: '2rem'
             }}>Your List is Empty</p>
         )}
-    </main>
+    </>
   )
 }
 
